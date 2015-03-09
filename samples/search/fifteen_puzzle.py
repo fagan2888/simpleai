@@ -139,7 +139,7 @@ class FifteenPuzzleProblem():
 
         for number in nums:
             row_n, col_n = find_location(rows, number)
-            print find_location(rows, number)
+            print(find_location(rows, number))
             row_n_goal, col_n_goal = goal_positions[number]
 
             distance += abs(row_n - row_n_goal) + abs(col_n - col_n_goal)
@@ -164,19 +164,23 @@ def main():
     def report_result(result):
         count = 1
         for action, state in result.path():
-            print "**** STEP NUMBER: {} ****".format(count)
+            print("**** STEP NUMBER: {} ****".format(count))
             count += 1
-            print 'Move number', action
-            print state
+            print('Move number', action)
+            print(state)
 
         # Running time
-        print "\ntime taken: ", end - start
+        print("\ntime taken: ", end - start)
 
     report_result(result)
 
     # visualize the solution using pygraph module, to use pygraph see: http://github.com/iamaziz/pygraph 
 
-    from pygraph.dgraph import PyGraph
+    try:
+        from pygraph.dgraph import PyGraph
+    except ImportError:
+        pass
+
     name = 'easy-BFS'
 
     def vizit(name):

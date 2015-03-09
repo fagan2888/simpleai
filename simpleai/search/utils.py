@@ -1,7 +1,10 @@
 # coding=utf-8
 import heapq
 from collections import deque
-from itertools import izip
+try:
+    from itertools import izip
+except ImportError:
+    izip = zip   # python 3
 import random
 
 

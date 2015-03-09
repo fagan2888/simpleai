@@ -2,7 +2,11 @@
 import random
 from copy import deepcopy, copy
 from itertools import product
-from utils import argmin
+try:
+    from utils import argmin
+except ImportError:
+    import sys
+    sys.path.append('../search') # python 3
 
 MOST_CONSTRAINED_VARIABLE = 'mcv'
 HIGHEST_DEGREE_VARIABLE = 'degree'
