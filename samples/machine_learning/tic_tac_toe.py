@@ -94,21 +94,21 @@ if __name__ == '__main__':
     b = RandomPlayer('O')
     c = HumanPlayer('O')
     game = TicTacToeGame([a, b])
-    print ('Training with a random player, please wait...')
-    game.agents = [a, b]
-    for i in range(3000):
-        game.run()
+    # print ('Training with a random player, please wait...')
+    # game.agents = [a, b]
+    # for i in range(3000):
+        # game.run()
 
-    a.dump('qlearner_agent')
+    # a.dump('qlearner_agent')
 
     d = TicTacToePlayer.load('qlearner_agent')
     d.play_with = 'O'
 
-    game.agents = [a, d]
-    per = PerformanceCounter(game.agents, ['QLearnerA', 'QLearnerD'])
-    for i in range(3000):
-        game.run()
-    per.show_statistics()
+    # game.agents = [a, d]
+    # per = PerformanceCounter(game.agents, ['QLearnerA', 'QLearnerD'])
+    # for i in range(3000):
+    #     game.run()
+    # per.show_statistics()
 
     game.agents = [a, c]
     print ('Do you like to play?')

@@ -149,7 +149,7 @@ class FifteenPuzzleProblem():
 
 
 def main():
-    
+
     # to record running time
     import time
     start = time.time()
@@ -174,7 +174,7 @@ def main():
 
     report_result(result)
 
-    # visualize the solution using pygraph module, to use pygraph see: http://github.com/iamaziz/pygraph 
+    # visualize the solution using pygraph module, to use pygraph see: http://github.com/iamaziz/pygraph
 
     try:
         from pygraph.dgraph import PyGraph
@@ -184,7 +184,7 @@ def main():
     name = 'easy-BFS'
 
     def vizit(name):
-        
+
         g = PyGraph()
         for i in range(len(result.path())):
             try:
